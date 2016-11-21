@@ -42,35 +42,4 @@ public class MainActivity extends RecyclerViewActivity {
         }
     }
 
-    static class FilaHolder extends RecyclerView.ViewHolder{
-        TextView etiqueta = null;
-        TextView tamanyo = null;
-        ImageView icono = null;
-        String template = null;
-
-        FilaHolder(View fila)
-        {
-            super(fila);
-
-            etiqueta = (TextView)fila.findViewById(R.id.etiqueta);
-            tamanyo = (TextView)fila.findViewById(R.id.tamanyo);
-            icono = (ImageView)fila.findViewById(R.id.icono);
-            template = tamanyo.getContext().getString(R.string.tamanyo_template);
-        }
-
-        private void bindModel(String item)
-        {
-            etiqueta.setText(item);
-            tamanyo.setText(String.format(template,item.length()));
-
-            if(item.length()>4)
-            {
-                icono.setImageResource(android.R.drawable.btn_star_big_off);
-            }
-            else
-            {
-                icono.setImageResource(android.R.drawable.btn_star_big_on);
-            }
-        }
-    }
 }
